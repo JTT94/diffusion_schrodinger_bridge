@@ -1,0 +1,31 @@
+# @package _global_
+
+defaults:
+  - launcher: local
+  - job
+  - dataset: stackedmnist #celeba, 2d, stackedmnist
+  - model: UNET #Basic, UNET
+  
+
+# data
+data_dir: ./data/
+
+# logging
+LOGGER: CSV # NEPTUNE, CSV, NONE
+CSV_log_dir: ./
+
+cache_gpu: False
+num_cache_batches: 10
+cache_refresh_stride: 1000
+plot_level: 1
+mean_match: True
+paths: 
+  experiments_dir_name: experiments
+
+# checkpoint
+checkpoint_run: False
+checkpoint_it: 1
+checkpoint_pass: backward
+sample_checkpoint_f: None
+sample_checkpoint_b: None
+checkpoint_f: None

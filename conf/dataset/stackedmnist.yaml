@@ -1,0 +1,56 @@
+# @package _global_
+
+# data 
+Dataset: stackedmnist
+data:
+  dataset: "Stacked_MNIST"
+  category: ""
+  image_size: 28
+  channels: 1
+
+# transfer
+transfer: False
+Dataset_transfer: mnist
+
+
+final_adaptive: False
+adaptive_mean: True
+mean_final: torch.zeros([${data.channels}, ${data.image_size}, ${data.image_size}])
+var_final: 1 * torch.ones([${data.channels}, ${data.image_size}, ${data.image_size}])
+load: False
+
+# device
+device: cuda
+dataparallel: True
+num_workers: 8 
+pin_memory: True
+
+# logging
+log_stride : 10
+gif_stride: 5000
+plot_npar: 100
+
+# training
+cache_npar: 1000
+num_cache_batches: 1
+use_prev_net: False
+ema: True
+ema_rate: 0.999
+grad_clipping: True
+grad_clip: 1.0
+n_ipf_init: 1
+batch_size: 128
+num_iter : 500000
+n_ipf: 20
+lr: 0.0001
+
+# schedule
+num_steps : 30
+gamma_max: 0.1
+gamma_min: 0.00001
+gamma_space: linspace
+weight_distrib: True
+weight_distrib_alpha: 100
+fast_sampling: True
+
+

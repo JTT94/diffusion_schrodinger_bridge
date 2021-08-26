@@ -1,0 +1,52 @@
+# @package _global_
+
+Dataset: 2d
+data: scurve
+
+# transfer
+transfer: False
+Dataset_transfer: 2d
+data_transfer: circle
+
+adaptive_mean: False
+final_adaptive: True
+mean_final: torch.tensor([0.,0.])
+var_final: 1.*torch.tensor([1., 1.])
+
+
+# device
+device: cpu
+dataparallel: False
+num_workers: 8
+pin_memory: False
+distributed: False
+
+# training
+use_prev_net: False
+mean_match: False
+ema: False
+ema_rate: 0.999
+grad_clipping: False
+grad_clip: 1.0
+npar: 10000
+batch_size: 512
+num_iter : 10000
+cache_npar: 10000
+n_ipf: 20
+lr: 0.0001
+
+# schedule
+num_steps : 20
+gamma_max: 0.01
+gamma_min: 0.01
+gamma_space: linspace
+weight_distrib: False
+weight_distrib_alpha: 100
+fast_sampling: True
+
+
+# logging
+plot_npar: 1000
+log_stride: 50
+gif_stride: ${num_iter}
+

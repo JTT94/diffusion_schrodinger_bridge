@@ -1,0 +1,55 @@
+# @package _global_
+
+# data 
+Dataset: celeba
+
+data:
+  dataset: "CELEBA"
+  image_size: 64
+  channels: 3
+  random_flip: true
+
+# transfer
+transfer: False
+Dataset_transfer: mnist
+
+
+final_adaptive: False
+adaptive_mean: True
+mean_final: torch.zeros([${data.channels}, ${data.image_size}, ${data.image_size}])
+var_final: .5 * torch.ones([${data.channels}, ${data.image_size}, ${data.image_size}])
+load: False
+
+# device
+device: cuda
+dataparallel: True
+num_workers: 8 
+pin_memory: False
+
+# logging
+log_stride : 10
+gif_stride: 5000
+plot_npar: 100
+
+# training
+cache_npar: 300
+use_prev_net: True
+ema: True
+ema_rate: 0.999
+grad_clipping: True
+grad_clip: 1.0
+n_ipf_init: 1
+batch_size: 128
+num_iter : 50000
+n_ipf: 20
+lr: 0.0001
+
+# diffusion schedule
+num_steps : 50
+gamma_max: 0.1
+gamma_min: 0.00001
+gamma_space: linspace
+weight_distrib: False
+weight_distrib_alpha: 100
+fast_sampling: True
+
