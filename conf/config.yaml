@@ -23,14 +23,11 @@ paths:
   experiments_dir_name: experiments
 
 # checkpoint
-checkpoint_run: True
+checkpoint_run: False
 checkpoint_it: 13
 checkpoint_pass: backward
-sample_checkpoint_f: "/data/greyostrich/oxwasp/oxwasp18/thornton/test/schrodinger_bridge/experiments/2021-08-18/main/cache_npar=300,model=UNET,num_iter=5000,num_steps=50,use_prev_net=True/08-40-49/checkpoints/sample_net_f_13_5000.ckpt"
-
-sample_checkpoint_b: "/data/greyostrich/oxwasp/oxwasp18/thornton/test/schrodinger_bridge/experiments/2021-08-18/main/cache_npar=300,model=UNET,num_iter=5000,num_steps=50,use_prev_net=True/08-40-49/checkpoints/sample_net_b_13_5000.ckpt"
-
-checkpoint_f: "/data/greyostrich/oxwasp/oxwasp18/thornton/test/schrodinger_bridge/experiments/2021-08-18/main/cache_npar=300,model=UNET,num_iter=5000,num_steps=50,use_prev_net=True/08-40-49/checkpoints/net_f_13_5000.ckpt"
-
-checkpoint_b: "/data/greyostrich/oxwasp/oxwasp18/thornton/test/schrodinger_bridge/experiments/2021-08-18/main/cache_npar=300,model=UNET,num_iter=5000,num_steps=50,use_prev_net=True/08-40-49/checkpoints/net_b_13_5000.ckpt"
+sample_checkpoint_f: ""
+sample_checkpoint_b: ""
+checkpoint_f: ""
+checkpoint_b: ""
 
