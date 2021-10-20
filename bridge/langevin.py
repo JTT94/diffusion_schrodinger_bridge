@@ -95,7 +95,7 @@ class Langevin(torch.nn.Module):
         if self.mean_match:
             for k in range(num_iter):
                 gamma = self.gammas[k]
-                t_old = net(x, 1 / steps[:, k, :])
+                t_old = net(x, steps[:, k, :])
 
                 if sample & (k == num_iter-1):
                     x = t_old
@@ -103,20 +103,20 @@ class Langevin(torch.nn.Module):
                     z = torch.randn(x.shape, device=x.device)
                     x = t_old + torch.sqrt(2 * gamma) * z
 
-                t_new = net(x, 1 / steps[:, k, :])
+                t_new = net(x, steps[:, k, :])
                 x_tot[:, k, :] = x
                 out[:, k, :] = (t_old - t_new)
         else:
             for k in range(num_iter):
                 gamma = self.gammas[k]
-                t_old = x + net(x, 1 / steps[:, k, :])
+                t_old = x + net(x, steps[:, k, :])
 
                 if sample & (k == num_iter-1):
                     x = t_old
                 else:
                     z = torch.randn(x.shape, device=x.device)
                     x = t_old + torch.sqrt(2 * gamma) * z
-                t_new = x + net(x, 1 / steps[:, k, :])
+                t_new = x + net(x, steps[:, k, :])
 
                 x_tot[:, k, :] = x
                 out[:, k, :] = (t_old - t_new)
