@@ -365,9 +365,9 @@ class IPFSequential(IPFBase):
 
             if self.args.mean_match:
                 pred = self.net[forward_or_backward](
-                    x, 1 / eval_steps) - x
+                    x, eval_steps) - x
             else:
-                pred = self.net[forward_or_backward](x, 1 / eval_steps)
+                pred = self.net[forward_or_backward](x, eval_steps)
 
             loss = F.mse_loss(pred, out)
 
