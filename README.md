@@ -59,8 +59,8 @@ or, if `git` is unavailable, download as a ZIP from GitHub https://github.com/<r
 
 3. Download data examples:
 
-    - CelebA: `python data.py --data celeba --data_dir './data/`
-    - MNIST:  `python data.py --data mnist --data_dir './data/`
+    - CelebA: `python data.py --data celeba --data_dir './data/' `
+    - MNIST:  `python data.py --data mnist --data_dir './data/' `
 
 
 How to use this code?
