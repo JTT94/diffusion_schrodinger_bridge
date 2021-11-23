@@ -192,7 +192,8 @@ class IPFBase(torch.nn.Module):
 
         self.kwargs = {"num_workers": self.args.num_workers,
                        "pin_memory": self.args.pin_memory,
-                       "worker_init_fn": worker_init_fn}
+                       "worker_init_fn": worker_init_fn,
+                       "drop_last": True}
 
         # get plotter, gifs etc.
         self.save_init_dl = DataLoader(
